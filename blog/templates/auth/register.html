@@ -1,0 +1,22 @@
+{%extends 'bas.html'%}
+{%block content %}
+
+<h2>Register</h2>
+
+{%if messages %}
+    {%for messages in messages%}
+        <p>{{message}}</p>
+    {%endfor%}
+{%endif%}
+
+<form method="post">
+    {%csrf_token%}
+    {{forms.as_p}}
+
+    <button type="submit">Register</button>
+
+</form>
+
+<p>Already have an account?<a href="{%url'login'%}">Log in</a></p>{%endblock%}
+
+
